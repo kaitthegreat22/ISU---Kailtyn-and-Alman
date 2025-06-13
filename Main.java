@@ -68,7 +68,7 @@ public class Main {
                         }
                     }
                     //going back to menu if there are no services
-                    if (filtered_categories.size() < 1) {
+                    if (filtered_categories.size() == 0) {
                         System.out.println("Sorry, there are no services available. Please add services first.");
                         keep_booking = false;
                     } else {
@@ -99,7 +99,7 @@ public class Main {
                                 }
                             }
 
-                            if (availableIndices.size() < 1) { //letting them restart if what they chose was empty
+                            if (availableIndices.size() == 0) { //letting them restart if what they chose was empty
                                 System.out.println("\nNo available services in " + chosenCat + " category!");
                                 System.out.println("All services in this category are fully booked.");
                             } else {
@@ -156,7 +156,7 @@ public class Main {
             } else if (option == 3) {
                 // View cart
                 System.out.println("---- Your Cart ----");
-                if (cart_service.size() < 1) {
+                if (cart_service.size() == 0) {
                     System.out.println("Your cart is empty!"); //going to main menu to let user add something
                 } else {
                     //display cart
@@ -210,8 +210,8 @@ public class Main {
 
             } else if (option == 4) {
                 // Checkout
-                System.out.println("---- Checkout ----");
-                if (cart_service.size() < 1) {
+                System.out.println("---- Checkout ----"); 
+                if (cart_service.size() == 0) {
                     System.out.println("Your cart is empty! Nothing to checkout.");
                 } else {
                     //getting total
