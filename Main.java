@@ -69,7 +69,7 @@ public class Main {
                     }
                     //going back to menu if there are no services
                     if (filtered_categories.size() == 0) {
-                        System.out.println("Sorry, there are no services available. Please add services first.");
+                        System.out.println("Sorry, the services are fully booked! Please add a service.");
                         keep_booking = false;
                     } else {
                         // Display categories
@@ -98,11 +98,6 @@ public class Main {
                                     availableIndices.add(j);
                                 }
                             }
-
-                            if (availableIndices.size() == 0) { //letting them restart if what they chose was empty
-                                System.out.println("\nNo available services in " + chosenCat + " category!");
-                                System.out.println("All services in this category are fully booked.");
-                            } else {
                                 // Display available services with rates
                                 System.out.println("\nAvailable Services in " + chosenCat + ":");
                                 for (int k = 0; k < availableIndices.size(); k++) {
@@ -148,7 +143,6 @@ public class Main {
 
                                     //ending loop
                                     keep_booking = false;
-                                }
                             }
                         }
                     }
@@ -165,12 +159,12 @@ public class Main {
                                 " (" + cart_cat.get(i) + ") - $" + cart_rate.get(i) + "/hr");
                     }
 
-                    boolean remove = true;
-                    while (remove) { //loop to keep removing if user wants
-                        System.out.println("Would you like to remove any services? 1 for yes, 2 for no. ");
-                        int remove_choice = sc.nextInt();
-                        if (remove_choice == 1) {
-                            System.out.println("Please choose which service to remove: ");
+                boolean remove = true;
+                while (remove) { //loop to keep removing if user wants
+                    System.out.println("Would you like to remove any services? 1 for yes, 2 for no. ");
+                    int remove_choice = sc.nextInt();
+                    if (remove_choice == 1) {
+                        System.out.println("Please choose which service to remove: ");
                             //displaying services again
                             for (int i = 0; i < cart_service.size(); i++) {
                                 System.out.println((i + 1) + ". " + cart_service.get(i) +
